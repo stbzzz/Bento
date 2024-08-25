@@ -5,9 +5,9 @@ namespace Bento
 {
     public abstract partial class CanGetModel
     {
-        private class IOCContainer
+        private sealed class IOCContainer
         {
-            private Dictionary<Type, object> m_Instances = new();
+            private readonly Dictionary<Type, object> m_Instances = new();
 
             public void Set<T>(T instance)
             {
